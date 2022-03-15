@@ -1,0 +1,34 @@
+
+###
+GET http://localhost:2394/api/notify
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+POST http://localhost:2394/api/notify
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "title": "공지 테스트33333",
+    "message": "<h4>공지 테스트입니다.</h4> <br /><br /> <p> 3333 번째 테스트 이건 중요함. ",
+    "appStop": 0,
+    "important": 1
+}
+
+###
+PATCH http://localhost:2394/api/notify
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "id": 1,
+    "title": "공지 테스트",
+    "message": "<h4>공지 테스트입니다.</h4> <br /><br /> 잘되는지 확인하기 위해 테스트 진행 ",
+    "appStop": 0,
+    "important": 1
+}

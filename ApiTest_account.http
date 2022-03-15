@@ -1,0 +1,9 @@
+
+###
+POST http://localhost:2394/api/account/
+content-type: application/json
+x-access-token: admin
+
+{
+    "identifyId": "aaaa888888888"
+}

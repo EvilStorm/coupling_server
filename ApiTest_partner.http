@@ -1,0 +1,31 @@
+
+###
+GET http://localhost:2394/api/partner
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+POST http://localhost:2394/api/partner
+content-type: application/json
+identifyId: aaaa1111111
+userId: 1
+
+{
+    "title": "도전해라",
+    "message": "아무나 오지마라 혼난다",
+    "matchTime": "{{$localDatetime 'YYYY-MM-DD HH:mm:ss'}}",
+    "location": "서울 강남구 학동로 235 로이빌딩",
+    "locationName": "ALOHA BOXING GYM"
+}
+
+###
+POST http://localhost:2394/api/partner/challenge
+content-type: application/json
+identifyId: sadasdqwdsadasd
+userId: 5
+
+{
+    "id": 1
+}

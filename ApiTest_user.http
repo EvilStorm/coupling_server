@@ -1,0 +1,32 @@
+
+###
+GET http://localhost:2394/api/user/me
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+GET http://localhost:2394/api/user/all/me
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+GET http://localhost:2394/api/user/id/7
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+###
+PATCH http://localhost:2394/api/user/me
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "nickName": "HIHIHI",
+    "age": 5,
+    "haha": "waht"
+}

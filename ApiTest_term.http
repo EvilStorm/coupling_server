@@ -1,0 +1,31 @@
+
+###
+GET http://localhost:2394/api/term
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+POST http://localhost:2394/api/term
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "seq": 1,
+    "term": "<h1>약관입니다</h1>",
+    "userTerm": "<h1>이용 약관입니다</h1>"
+}
+
+###
+PATCH http://localhost:2394/api/term
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "id": 1,
+    "term": "<h1>약관입니다 수정</h1>",
+    "userTerm": "<h1>이용 약관입니다 수정 </h1>"
+}

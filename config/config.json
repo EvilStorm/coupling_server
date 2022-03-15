@@ -1,0 +1,50 @@
+{
+  "development": {
+    "username": "root",
+    "password": "wkfgo1!",
+    "database": "coupling_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    },
+    "define": {
+      "freezeTableName": true,
+      "timestamps": true
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "wkfgo1!",
+    "database": "coupling_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    },
+    "define": {
+      "freezeTableName": true,
+      "timestamps": true
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "wkfgo1!",
+    "database": "coupling",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    },
+    "define": {
+      "freezeTableName": true,
+      "timestamps": true
+    }
+  }
+}

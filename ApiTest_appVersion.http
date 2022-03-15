@@ -1,0 +1,31 @@
+
+###
+GET http://localhost:2394/api/appVer
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+POST http://localhost:2394/api/appVer
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "seq": 2,
+    "message": "버전2 업데이트가 있으니까 스토어로 갑시다.",
+    "nessesary": 0
+}
+
+###
+PATCH http://localhost:2394/api/appVer
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "id": 1,
+    "message": "업데이트가 있으니까 스토어로 갑시다.22",
+    "nessesary": 0
+}

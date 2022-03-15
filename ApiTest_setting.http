@@ -1,0 +1,18 @@
+
+###
+GET http://localhost:2394/api/setting
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+###
+PATCH http://localhost:2394/api/setting
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+{
+    "nearByAlarm": false,
+    "categoryAlarm": false,
+    "matchCoupleAlarm": false
+}
