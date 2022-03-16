@@ -1,19 +1,19 @@
 
 ###
-GET http://localhost:2394/api/partner
+GET http://localhost:2394/api/competition/id/2
 content-type: application/json
 identifyId: asdqdszd
 userId: 8
 
 
 ###
-POST http://localhost:2394/api/partner
+POST http://localhost:2394/api/competition
 content-type: application/json
 identifyId: aaaa1111111
-userId: 1
+userId: 2
 
 {
-    "title": "도전해라",
+    "title": "도전해라2222 2222222222",
     "message": "아무나 오지마라 혼난다",
     "matchTime": "{{$localDatetime 'YYYY-MM-DD HH:mm:ss'}}",
     "location": "서울 강남구 학동로 235 로이빌딩",
@@ -21,11 +21,11 @@ userId: 1
 }
 
 ###
-POST http://localhost:2394/api/partner/challenge
+POST http://localhost:2394/api/competition/challenge
 content-type: application/json
 identifyId: sadasdqwdsadasd
-userId: 5
+userId: 2
 
 {
-    "id": 1
+    "id": 2
 }

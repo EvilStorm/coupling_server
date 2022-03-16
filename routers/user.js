@@ -6,7 +6,7 @@ const { body, validationResult } = require('express-validator');
 const {ExceptionType, createException} = require('../components/exception_creator');
 const auth = require('../components/auth');
 
-const {sequelize, User, Setting} = require('../models');
+const {sequelize, User, Setting, Competition} = require('../models');
 
 router.get('/me', auth.isSignIn, async function (req, res, next) {
     try {
@@ -25,11 +25,10 @@ router.get('/all/me', auth.isSignIn, async function (req, res, next) {
             include: [{
                 model: Setting,
                 attributes: ['nearByAlarm', 'categoryAlarm', 'matchCoupleAlarm']
+            }, {
+                model: Competition,
             }], 
         });
-
-
-
         res.json(response.success(result));
     } catch (e) {
         console.log(e);
@@ -70,7 +69,4 @@ router.patch('/me', auth.isSignIn, async function (req, res, next) {
 });
 
 
-
-
 module.exports = router;
-

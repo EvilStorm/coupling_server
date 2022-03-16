@@ -1,6 +1,6 @@
 module.exports =  (sequelize, DataTypes) => {
-    const Partner = sequelize.define(
-        'Partner',
+    const Competition = sequelize.define(
+        'Competition',
         {
             id: {
                 type: DataTypes.INTEGER.UNSIGNED,
@@ -9,7 +9,6 @@ module.exports =  (sequelize, DataTypes) => {
             },
             opponentId: {
                 type: DataTypes.INTEGER.UNSIGNED,
-                allowNull: true,
             },
             title: {
                 type: DataTypes.STRING,
@@ -37,8 +36,8 @@ module.exports =  (sequelize, DataTypes) => {
         },
         {
             underscored: true,
-            tableName: 'partner'
+            tableName: 'competition'
         }
     )
-    return Partner;
+    return Competition;
 }

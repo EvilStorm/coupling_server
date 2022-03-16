@@ -35,11 +35,10 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 
-db['Account'].hasOne(db['User'])
-db['User'].hasOne(db['Setting'])
-db['User'].hasMany(db['Partner'])
-// db['User'].belongsToMany(db['Partner'], {through: 'partner_map', foreignKey: 'userId'} )
-// db['Partner'].belongsToMany(db['User'], {through: 'partner_map', foreignKey: 'opponentId'})
+db['Account'].hasOne(db['User']);
+db['User'].hasOne(db['Setting']);
 
+db['User'].hasMany(db['Competition']);
+db['Competition'].belongsTo(db['User']);
 
 module.exports = db;
