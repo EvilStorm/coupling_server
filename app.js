@@ -34,7 +34,7 @@ db.sequelize.sync()
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
     res.header('Access-Control-Allow-Headers', 'content-type, x-access-token'); //1
     next();
 });
@@ -65,6 +65,7 @@ app.use('/docs/', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/api/appStart', require('./routers/app_start'));
 app.use('/api/dev', require('./routers/dev_option'));
 app.use('/api/account', require('./routers/account'));
+app.use('/api/sign', require('./routers/account'));
 app.use('/api/user', require('./routers/user'));
 app.use('/api/setting', require('./routers/setting'));
 app.use('/api/notify', require('./routers/notify'));

@@ -61,7 +61,7 @@ ExceptionInfos = {
     QUERY_FAIL: {
         code: 551,
         title: 'Query Fail',
-        message: '서버에 문제가 있습니다.'
+        message: '데이터를 가져오는데 실패 했습니다.'
     }, 
     INVALID_PARAMS: {
         code: 556,

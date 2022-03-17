@@ -31,14 +31,23 @@ content-type: application/json
 identifyId: asdqdszd
 userId: 4
 
+
+###
+POST http://localhost:2394/api/user/update
+content-type: application/json
+identifyId: TvUhKduk2neLamvlMRqlrOTZwue2
+userId: 5
+
+{
+    "nickName": "hahaha"
+}
+
 ###
 PATCH http://localhost:2394/api/user/me
 content-type: application/json
 identifyId: asdqdszd
-userId: 8
+userId: 3
 
 {
-    "nickName": "HIHIHI",
-    "age": 5,
-    "haha": "waht"
+    "nickName": "HIHIHI"
 }

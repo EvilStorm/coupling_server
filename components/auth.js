@@ -12,7 +12,7 @@ auth.isSignIn = function(req, res, next) {
 
   var token = req.headers['identifyid'];
   var userId = req.headers['userid'];
-
+  
   if (!token || !userId) {
     var error = createException(ExceptionType.REQUIRED_JWT_TOKEN);
     res.json(response.fail(error, error.errmsg, error.code));

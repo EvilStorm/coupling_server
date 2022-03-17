@@ -6,6 +6,7 @@ const { body, validationResult } = require('express-validator');
 const {ExceptionType, createException} = require('../components/exception_creator');
 
 const {sequelize, Account, User, Setting} = require('../models');
+const {getUserInfoByPk, getUserInfoAccountId} = require('./functions/user_info');
 
 
 //회원가입, 로그인은 Firebase를 통해 이루어지고, 
@@ -24,7 +25,7 @@ router.post('/', [body('identifyId').exists()], async function (req, res, next) 
     });
     if(checkExists != null) {
         try {
-            const result = await User.findOne({accountId: checkExists.id});
+            const result = await getUserInfoAccountId(checkExists.id);
             res.json(response.success(result));
             return;
         } catch(e) {
@@ -47,7 +48,7 @@ router.post('/', [body('identifyId').exists()], async function (req, res, next) 
 
         transaction.commit();
 
-        const result = await User.findByPk(userResult.id);
+        const result = await getUserInfoByPk(userResult.id);
 
         console.log(` SEARCH USER: ${userResult.id}  BUT !!! result: ${JSON.stringify(result)}`);
         res.json(response.success(result));
@@ -58,6 +59,7 @@ router.post('/', [body('identifyId').exists()], async function (req, res, next) 
         next(e);
     }
 });
+
 
 
 
