@@ -14,10 +14,10 @@ userId: 8
 
 
 ###
-GET http://localhost:2394/api/user/id/7
+GET http://localhost:2394/api/user/id/2
 content-type: application/json
 identifyId: asdqdszd
-userId: 8
+userId: 1
 
 ###
 GET http://localhost:2394/api/user/all/me
@@ -25,6 +25,11 @@ content-type: application/json
 identifyId: asdqdszd
 userId: 1
 
+###
+GET http://localhost:2394/api/user/me
+content-type: application/json
+identifyId: asdqdszd
+userId: 4
 
 ###
 PATCH http://localhost:2394/api/user/me

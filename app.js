@@ -62,7 +62,8 @@ Object.keys(ifaces).forEach(function (ifname) {
 
 app.use('/docs/', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
-app.use('/api/test', require('./routers/test'));
+app.use('/api/appStart', require('./routers/app_start'));
+app.use('/api/dev', require('./routers/dev_option'));
 app.use('/api/account', require('./routers/account'));
 app.use('/api/user', require('./routers/user'));
 app.use('/api/setting', require('./routers/setting'));

@@ -1,0 +1,26 @@
+
+###
+GET http://localhost:2394/api/appStart/init/appVer/0
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+###
+GET http://localhost:2394/api/appStart/init/notify/0
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+###
+GET http://localhost:2394/api/appStart/init/term/0
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
+GET http://localhost:2394/api/appStart/init/0/0/0
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+

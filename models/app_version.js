@@ -1,13 +1,13 @@
 module.exports =  (sequelize, DataTypes) => {
     const appVersion = sequelize.define(
-        'appVersion',
+        'AppVersion',
         {
             id: {
                 type: DataTypes.INTEGER.UNSIGNED,
                 autoIncrement: true,
                 primaryKey: true
             },
-            seq: {
+            version: {
                 type: DataTypes.INTEGER.UNSIGNED
             },
             message: {

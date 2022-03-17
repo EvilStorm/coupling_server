@@ -6,11 +6,29 @@ const { body, validationResult } = require('express-validator');
 const {ExceptionType, createException} = require('../components/exception_creator');
 const auth = require('../components/auth');
 
-const {sequelize, User, Setting, Competition} = require('../models');
+const {sequelize, Account, User, Setting, Competition} = require('../models');
 
 router.get('/me', auth.isSignIn, async function (req, res, next) {
     try {
-        const result = await User.findByPk(req.decoded.id);
+        const result = await User.findByPk(req.decoded.id, 
+            {
+            // attributes: ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', [sequelize.col('Account.identify_id'), 'tt']],
+        
+            include: [
+                {
+                    model: Account,
+                    attributes: [],
+                    required: true,
+                }],
+                attributes: ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', 
+                    [sequelize.col('Account.identify_id'), 'identifyId'], 
+                    [sequelize.col('Account.email'), 'email'], 
+                    [sequelize.col('Account.secure_level'), 'secureLevel'], 
+                    [sequelize.col('Account.join_type'), 'joinType'], 
+                ],
+
+            raw: true,
+        });
         res.json(response.success(result));
     } catch (e) {
         console.log(e);

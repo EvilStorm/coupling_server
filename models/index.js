@@ -36,6 +36,8 @@ db.Sequelize = Sequelize;
 
 
 db['Account'].hasOne(db['User']);
+db['User'].belongsTo(db['Account']);
+
 db['User'].hasOne(db['Setting']);
 
 db['User'].hasMany(db['Competition']);
