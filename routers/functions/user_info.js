@@ -1,7 +1,7 @@
 const {sequelize, Account, User} = require('../../models');
 
 async function getUserInfoByPk(id) {
-    return await User.findByPk(req.decoded.id, 
+    return await User.findByPk(id, 
         {
         // attributes: ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', [sequelize.col('Account.identify_id'), 'tt']],
     
