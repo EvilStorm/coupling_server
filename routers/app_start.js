@@ -16,13 +16,14 @@ router.get('/', async function (req, res, next) {
 async function getAppVersion(appVer) {
     const result = await AppVersion.findOne({
         attributes: [
-            [Sequelize.fn("max", Sequelize.col('seq')), 'seq'],
-            [Sequelize.literal(`(select message from app_version where used=1 order by seq desc limit 1)` ),'message' ],
+            [Sequelize.fn("max", Sequelize.col('id')), 'id'],
+            [Sequelize.fn("max", Sequelize.col('version')), 'version'],
+            [Sequelize.literal(`(select message from app_version where used=1 order by id desc limit 1)` ),'message' ],
             [Sequelize.fn("max", Sequelize.col('nessesary')), 'nessesary'],        
         ],
         where: {
             [Op.and]: [{
-                seq: {
+                version: {
                     [Op.gt]: appVer
                 }
             }, {
