@@ -7,10 +7,17 @@ userId: 8
 
 
 ###
+GET http://localhost:2394/api/competition/monthly/2022/3
+content-type: application/json
+identifyId: asdqdszd
+userId: 8
+
+
+###
 POST http://localhost:2394/api/competition
 content-type: application/json
-identifyId: aaaa1111111
-userId: 2
+identifyId: 1yPpFJECu3Zso1SR9mTBYLhZWog2
+userId: 1
 
 {
     "title": "도전해라2222 2222222222",

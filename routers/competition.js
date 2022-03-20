@@ -51,6 +51,25 @@ router.get('/id/:id', async function (req, res, next) {
 
 
 
+router.get('/monthly/:year/:month', async function (req, res, next) {
+    try {
+        const result = await Competition.findAll({
+            where: {
+                
+            },
+            include: [{
+                model: User,
+            }]
+        });
+        res.json(response.success(result));
+    } catch (e) {
+        console.log(e);
+        next(e);
+    }
+});
+
+
+
 router.post('/', auth.isSignIn, async function (req, res, next) {
     
     try {
