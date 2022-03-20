@@ -49,7 +49,23 @@ router.get('/id/:id', async function (req, res, next) {
 
 
 router.patch('/', auth.isSignIn, async function (req, res, next) {
+
     try {
+
+        if(req.body.nickName) {
+            const checkNickName = await User.findOne({
+                where: {
+                    nickName: req.body.nickName
+                }
+            });
+
+            if(checkNickName) {
+                res.json(response.success({result: 0, message: "사용중인 별명입니다."}));
+                return;
+            }
+
+        }
+
         const result = await User.update(
             req.body,
             {
@@ -72,6 +88,22 @@ router.patch('/', auth.isSignIn, async function (req, res, next) {
 
 router.patch('/me', auth.isSignIn, async function (req, res, next) {
     try {
+
+
+        if(req.body.nickName) {
+            const checkNickName = await User.findOne({
+                where: {
+                    nickName: req.body.nickName
+                }
+            });
+
+            if(checkNickName) {
+                res.json(response.success({result: 0, message: "사용중인 별명입니다."}));
+                return;
+            }
+
+        }
+        
         const result = await User.update(
             req.body,
             {

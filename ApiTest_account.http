@@ -7,3 +7,14 @@ x-access-token: admin
 {
     "identifyId": "aaaa4444444"
 }
+
+
+###
+POST http://localhost:2394/api/sign/
+content-type: application/json
+
+{
+    "identifyId": "1yPpFJECu3Zso1SR9mTBYLhZWog2",
+    "email":"kakak@kaka.com","joinType":"0"
+}
+

@@ -9,15 +9,34 @@ module.exports =  (sequelize, DataTypes) => {
             },
             nickName: {
                 type: DataTypes.STRING,
-                allowNull: true,
+                unique: true
             },
             photoUrl: {
                 type: DataTypes.STRING,
-                allowNull: true,
             },
             age: {
                 type: DataTypes.INTEGER.UNSIGNED,
-                allowNull: true,
+            },
+            gender: {
+                type: DataTypes.INTEGER.UNSIGNED,
+            },
+            height: {
+                type: DataTypes.INTEGER.UNSIGNED,
+            },
+            weight: {
+                type: DataTypes.INTEGER.UNSIGNED,
+            },
+            kakaoTalkId: {
+                type: DataTypes.STRING,
+            },
+            locationLatLng: {
+                type: DataTypes.GEOMETRY('POINT'),
+            },
+            location: {
+                type: DataTypes.STRING,
+            }, 
+            history: {
+                type: DataTypes.STRING,
             },
             firebaseToken: {
                 type: DataTypes.STRING,

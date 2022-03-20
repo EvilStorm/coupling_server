@@ -43,4 +43,8 @@ db['User'].hasOne(db['Setting']);
 db['User'].hasMany(db['Competition']);
 db['Competition'].belongsTo(db['User']);
 
+db['Competition'].hasMany(db['Challenger']);
+db['Challenger'].belongsTo(db['Competition']);
+db['Challenger'].belongsTo(db['User']);
+
 module.exports = db;

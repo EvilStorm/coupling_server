@@ -1,5 +1,8 @@
 const {sequelize, Account, User} = require('../../models');
 
+
+const userColumn = ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', 'gender', 'height', 
+                    'weight', 'locationLatLng', 'location', 'history', 'kakaoTalkId'];
 async function getUserInfoByPk(id) {
     return await User.findByPk(req.decoded.id, 
         {
@@ -11,7 +14,7 @@ async function getUserInfoByPk(id) {
                 attributes: [],
                 required: true,
             }],
-            attributes: ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', 
+            attributes: [ ...userColumn,
                 [sequelize.col('Account.identify_id'), 'identifyId'], 
                 [sequelize.col('Account.email'), 'email'], 
                 [sequelize.col('Account.secure_level'), 'secureLevel'], 
@@ -35,7 +38,7 @@ async function getUserInfoAccountId(id) {
                 attributes: [],
                 required: true,
             }],
-            attributes: ['id', 'nickName', 'photoUrl', 'age', 'firebaseToken', 
+            attributes: [...userColumn, 
                 [sequelize.col('Account.identify_id'), 'identifyId'], 
                 [sequelize.col('Account.email'), 'email'], 
                 [sequelize.col('Account.secure_level'), 'secureLevel'], 
