@@ -5,6 +5,13 @@ content-type: application/json
 identifyId: asdqdszd
 userId: 8
 
+###
+GET http://localhost:2394/api/competition/detail/8
+content-type: application/json
+identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
+userId: 9
+
+
 
 ###
 GET http://localhost:2394/api/competition/monthly/2022/3
@@ -30,9 +37,20 @@ userId: 1
 ###
 POST http://localhost:2394/api/competition/challenge
 content-type: application/json
-identifyId: sadasdqwdsadasd
-userId: 2
+identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
+userId: 9
 
 {
-    "id": 2
+    "competitionId": 8
+}
+
+###
+POST http://localhost:2394/api/competition/select/challenger
+content-type: application/json
+identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
+userId: 9
+
+{
+    "competitionId": 8,
+    "challengerId": 12
 }
