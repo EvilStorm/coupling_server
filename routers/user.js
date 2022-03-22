@@ -39,7 +39,7 @@ router.get('/all/me', auth.isSignIn, async function (req, res, next) {
 
 router.get('/id/:id', async function (req, res, next) {
     try {
-        const result = await User.findByPk(7);
+        const result = await User.findByPk(req.params.id);
         res.json(response.success(result));
     } catch (e) {
         console.log(e);
