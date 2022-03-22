@@ -15,7 +15,7 @@ module.exports =  (sequelize, DataTypes) => {
             underscored: true,
             tableName: 'challenger',
             charset: 'utf8',
-            collate: 'utf8',
+            collate: 'utf8_general_ci',
         }
     )
     return Challenger;
