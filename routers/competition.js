@@ -52,10 +52,16 @@ router.get('/id/:id', async function (req, res, next) {
 
 
 router.get('/monthly/:year/:month', async function (req, res, next) {
+    const startDate = new Date(req.params.year, req.params.month-1, 1, 0,0,0);
+    const endDate = new Date(req.params.year, req.params.month, 0, 23,59, 59);
+
+
     try {
         const result = await Competition.findAll({
             where: {
-                
+                matchTime: {
+                    [Op.between]: [startDate, endDate]
+                },
             },
             include: [{
                 model: User,
