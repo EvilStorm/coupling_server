@@ -25,7 +25,9 @@ module.exports =  (sequelize, DataTypes) => {
             
         }, {
             underscored: true,
-            tableName: 'app_version'
+            tableName: 'app_version',
+            charset: 'utf8',
+            collate: 'utf8',
         }
     )
     return appVersion;

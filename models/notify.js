@@ -30,7 +30,9 @@ module.exports =  (sequelize, DataTypes) => {
             
         }, {
             underscored: true,
-            tableName: 'notify'
+            tableName: 'notify',
+            charset: 'utf8',
+            collate: 'utf8',
         }
     )
     return notify;

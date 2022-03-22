@@ -36,7 +36,9 @@ module.exports =  (sequelize, DataTypes) => {
         },
         {
             underscored: true,
-            tableName: 'competition'
+            tableName: 'competition',
+            charset: 'utf8',
+            collate: 'utf8',
         }
     )
     return Competition;

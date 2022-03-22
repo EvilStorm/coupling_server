@@ -43,7 +43,9 @@ module.exports =  (sequelize, DataTypes) => {
             },
         }, {
             underscored: true,
-            tableName: 'user'
+            tableName: 'user',
+            charset: 'utf8',
+            collate: 'utf8',
         }
     )
     return user;
