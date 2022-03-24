@@ -35,22 +35,22 @@ userId: 1
 }
 
 ###
-POST http://localhost:2394/api/competition/challenge
+POST http://3.36.123.30:2394/api/competition/challenge
 content-type: application/json
-identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
-userId: 9
+identifyId: Amu3gNVwBFXltNDtnIKmD79Do9y1
+userId: 10
 
 {
-    "competitionId": 8
+    "competitionId": 1
 }
 
 ###
-POST http://localhost:2394/api/competition/select/challenger
+POST http://3.36.123.30:2394/api/competition/select/challenger
 content-type: application/json
-identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
-userId: 9
+identifyId: Amu3gNVwBFXltNDtnIKmD79Do9y1
+userId: 10
 
 {
-    "competitionId": 8,
-    "challengerId": 12
+    "competitionId": 1,
+    "challengerId": 
 }
