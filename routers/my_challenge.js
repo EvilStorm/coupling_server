@@ -14,14 +14,7 @@ router.get('/all/:id',  async function (req, res, next) {
         var result = await Competition.findAll({
             where: {
                 user_id: req.params.id
-            },include: [{
-                model: User,
-            },{
-                model: Challenger,
-                include: [{
-                    model: User,
-                }]
-            }],
+            }
         });
 
         res.json(response.success(result));

@@ -35,10 +35,10 @@ userId: 1
 }
 
 ###
-POST http://3.36.123.30:2394/api/competition/challenge
+POST http://localhost:2394/api/competition/challenge
 content-type: application/json
 identifyId: Amu3gNVwBFXltNDtnIKmD79Do9y1
-userId: 10
+userId: 7
 
 {
     "competitionId": 1
