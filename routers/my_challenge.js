@@ -6,47 +6,76 @@ const { body, validationResult } = require('express-validator');
 const {ExceptionType, createException} = require('../components/exception_creator');
 const auth = require('../components/auth');
 
-const {sequelize, Competition, User,} = require('../models');
+const {sequelize, Competition, User, Challenger, } = require('../models');
 const { isSignIn } = require('../components/auth');
 
 router.get('/all/:id',  async function (req, res, next) {
     try {
-        var result = await Competition.findAll({
-            where: {
-                user_id: req.params.id
+        var result = await Competition.findAll(
+            {
+                where: {
+                    user_id: req.params.id
+                },
+                include: [{
+                    model: User,
+                    required: false,
+                },
+                {
+                    model: Challenger,
+                    required: false,
+                    include: [{
+                        model: User,
+                        required: false,
+                    }]
+                }
+            ],
             }
-        });
-
+        );
+        
+        for await (const item of result) {
+            if(item.dataValues.opponentId != null) {
+                const user = await User.findByPk(item.dataValues.opponentId)
+                item.dataValues.Oppoent = user;
+            }
+        }
         res.json(response.success(result));
     } catch (e) {
         console.log(e);
         next(e);
     }
+
 });
+
 
 router.get('/competition/:id',  async function (req, res, next) {
     try {
-        var result = await Competition.findOne(
+        var result = await Competition.findAll(
             {
                 where: {
-                    id: req.params.id
+                    user_id: req.params.id
                 },
                 include: [{
                     model: User,
-                },{
+                    required: false,
+                },
+                {
                     model: Challenger,
+                    required: false,
                     include: [{
                         model: User,
+                        required: false,
                     }]
-                }],
+                }
+            ],
             }
         );
-
-        if(result.dataValues.opponentId != null) {
-            const user = await User.findByPk(result.dataValues.opponentId)
-            result.dataValues.Oppoent = user;
+        
+        for await (const item of result) {
+            if(item.dataValues.opponentId != null) {
+                const user = await User.findByPk(item.dataValues.opponentId)
+                item.dataValues.Oppoent = user;
+            }
         }
-
         res.json(response.success(result));
     } catch (e) {
         console.log(e);
@@ -55,27 +84,33 @@ router.get('/competition/:id',  async function (req, res, next) {
 });
 router.get('/opponent/:id',  async function (req, res, next) {
     try {
-        var result = await Competition.findOne(
+        var result = await Competition.findAll(
             {
                 where: {
                     opponentId: req.params.id
                 },
                 include: [{
                     model: User,
-                },{
+                    required: false,
+                },
+                {
                     model: Challenger,
+                    required: false,
                     include: [{
                         model: User,
+                        required: false,
                     }]
-                }],
+                }
+            ],
             }
         );
-
-        if(result.dataValues.opponentId != null) {
-            const user = await User.findByPk(result.dataValues.opponentId)
-            result.dataValues.Oppoent = user;
+        
+        for await (const item of result) {
+            if(item.dataValues.opponentId != null) {
+                const user = await User.findByPk(item.dataValues.opponentId)
+                item.dataValues.Oppoent = user;
+            }
         }
-
         res.json(response.success(result));
     } catch (e) {
         console.log(e);

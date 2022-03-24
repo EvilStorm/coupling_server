@@ -18,3 +18,12 @@ content-type: application/json
     "email":"kakak@kaka.com","joinType":"0"
 }
 
+###
+POST http://localhost:2394/api/sign/
+content-type: application/json
+
+{
+    "identifyId": "m41oT1QyA3QiUAIYM1QEydHGn5l2",
+    "email":"iii@iii.com","joinType":"0"
+}
+

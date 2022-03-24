@@ -10,6 +10,7 @@ module.exports =  (sequelize, DataTypes) => {
             identifyId: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                unique: true,
             },
             email: {
                 type: DataTypes.STRING,

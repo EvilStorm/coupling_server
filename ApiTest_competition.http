@@ -1,6 +1,6 @@
 
 ###
-GET http://localhost:2394/api/competition/id/2
+GET http://localhost:2394/api/competition/id/8
 content-type: application/json
 identifyId: asdqdszd
 userId: 8
@@ -8,9 +8,15 @@ userId: 8
 ###
 GET http://localhost:2394/api/competition/detail/8
 content-type: application/json
-identifyId: S7HlWCbUDEU84limyu51NN1wiSo1
-userId: 9
+identifyId: m41oT1QyA3QiUAIYM1QEydHGn5l2
+userId: 16
 
+
+###
+GET http://localhost:2394/api/challenge/all/12
+content-type: application/json
+identifyId: m41oT1QyA3QiUAIYM1QEydHGn5l2
+userId: 16
 
 
 ###
@@ -24,7 +30,7 @@ userId: 8
 POST http://localhost:2394/api/competition
 content-type: application/json
 identifyId: 1yPpFJECu3Zso1SR9mTBYLhZWog2
-userId: 1
+userId: 12
 
 {
     "title": "도전해라2222 2222222222",
