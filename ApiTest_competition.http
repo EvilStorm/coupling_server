@@ -18,6 +18,17 @@ content-type: application/json
 identifyId: m41oT1QyA3QiUAIYM1QEydHGn5l2
 userId: 16
 
+###
+GET http://localhost:2394/api/challenge/competition/34
+content-type: application/json
+identifyId: HAjjoEJ1BbRYjNmIxRXKFAjlG5W2
+userId: 34
+###
+GET http://localhost:2394/api/challenge/opponent/10
+content-type: application/json
+identifyId: HAjjoEJ1BbRYjNmIxRXKFAjlG5W2
+userId: 34
+
 
 ###
 GET http://localhost:2394/api/competition/monthly/2022/3
@@ -30,7 +41,7 @@ userId: 8
 POST http://localhost:2394/api/competition
 content-type: application/json
 identifyId: 1yPpFJECu3Zso1SR9mTBYLhZWog2
-userId: 12
+userId: 34
 
 {
     "title": "도전해라2222 2222222222",
@@ -43,11 +54,11 @@ userId: 12
 ###
 POST http://localhost:2394/api/competition/challenge
 content-type: application/json
-identifyId: Amu3gNVwBFXltNDtnIKmD79Do9y1
-userId: 7
+identifyId: HgueykIJ16atTvbogpmeegboU0f2
+userId: 34
 
 {
-    "competitionId": 1
+    "competitionId": 6
 }
 
 ###

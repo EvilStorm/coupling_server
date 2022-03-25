@@ -65,8 +65,9 @@ router.get('/competition/:id',  async function (req, res, next) {
                         model: User,
                         required: false,
                     }]
-                }
-            ],
+                },],
+                order: [['match_time', 'asc']],
+
             }
         );
         
@@ -102,6 +103,8 @@ router.get('/opponent/:id',  async function (req, res, next) {
                     }]
                 }
             ],
+            order: [['match_time', 'asc']],
+
             }
         );
         
